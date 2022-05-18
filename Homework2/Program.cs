@@ -59,4 +59,12 @@ int y2 = int.Parse(Console.ReadLine());
 
 double distanceAB = Math.Sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 Console.WriteLine("Расстояние между двумя точками на плоскости: {0}", distanceAB);
+
+Console.WriteLine("Введите координаты точки Z для определения расстояния в пространстве.");
+Console.WriteLine("z1");
+int z1 = int.Parse(Console.ReadLine());
+Console.WriteLine("z2");
+int z2 = int.Parse(Console.ReadLine());
+double distanceABspace = Math.Sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1) +(z2 - z1)*(z2 - z1));
+Console.WriteLine("Расстояние между двумя точками в пространстве: {0}", distanceABspace);
 Console.WriteLine();
