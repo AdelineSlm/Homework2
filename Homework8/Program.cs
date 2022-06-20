@@ -104,10 +104,8 @@ int[,] matrix = new int[rows, columns];
 FillArray(matrix);
 Console.WriteLine("Полученный массив целых чисел:");
 PrintArray(matrix);
-Console.WriteLine($"Индекс первого минимального элемента: строка = {IndexArray(matrix)[0] + 1} "
-                                                + $", столбец = {IndexArray(matrix)[1] + 1}");
-Console.WriteLine("Массив после удаления строки и столбца,"
-                + " на пересечении которых расположен наименьший элемент:");
+Console.WriteLine($"Индекс первого минимального элемента: строка = {IndexArray(matrix)[0] + 1}, столбец = {IndexArray(matrix)[1] + 1}");
+Console.WriteLine("Массив после удаления строки и столбца, на пересечении которых расположен наименьший элемент:");
 PrintArray(Delete(matrix, IndexArray(matrix)[0], IndexArray(matrix)[1]));
 Console.WriteLine();
 
@@ -142,31 +140,26 @@ int m = int.Parse(Console.ReadLine() ?? "0");
 Console.Write("Введите 3-е измерение массива: ");
 int k = int.Parse(Console.ReadLine() ?? "0");
 int[,,] matrix3D = new int[n, m, k];
-if (n * m * k + 9 > 99)
-{
-    Console.WriteLine($"Невозможно заполнить 3-х мерную матрицу с измерениями {n}, {m}, {k}");
-    Console.WriteLine("не повторяющимися двухзначными числами! Будут также использованы трехзначные числа.");
-}
 Fill3DArray(matrix3D);
 Print3DArray(matrix3D);
 Console.WriteLine();
 
 //Показать треугольник Паскаля 
-void PrintTriangle(int[,] pascal)
+void PrintTriangle(int[,] matr)
 {
-    for (int i = 0; i < pascal.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        string pascalPrint = String.Empty;
-        for (int j = 0; j < pascal.GetLength(1); j++)
+        string matrPrint = String.Empty;
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (pascal[i, j] == 0)
+            if (matr[i, j] == 0)
                 Console.Write("    ");
             else
             {
-                pascalPrint = Convert.ToString(pascal[i, j]);
-                while (pascalPrint.Length < 4) // Красивое форматирование печати вплоть до 4-х значных чисел.
-                    pascalPrint += " ";
-                Console.Write(pascalPrint);
+                matrPrint = Convert.ToString(matr[i, j]);
+                while (matrPrint.Length < 4) 
+                    matrPrint += " ";
+                Console.Write(matrPrint);
             }
         }
         Console.WriteLine();
@@ -183,5 +176,5 @@ int[,] FillTriangle(int height)
 }
 
 Console.Write("Введите высоту треугольника Паскаля: ");
-int height = int.Parse(Console.ReadLine() ?? "0");
+int height = int.Parse(Console.ReadLine());
 PrintTriangle(FillTriangle(height));
