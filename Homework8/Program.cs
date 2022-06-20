@@ -41,8 +41,10 @@ int rows2 = int.Parse(Console.ReadLine() ?? "0");
 Console.WriteLine("Введите кол-во столбцов второй матрицы: ");
 int columns2 = int.Parse(Console.ReadLine() ?? "0");
 int[,] matrix2 = new int[rows2, columns2];
-if (rows1 != columns2) Console.WriteLine("Невозможно найти произведение матриц, т.к. кол-во строк первой матрицы не равно кол-ву столбцов второй!");
-else if (columns1 != rows2) Console.WriteLine("Невозможно найти произведение матриц, т.к. кол-во столбцов первой матрицы не равно кол-ву строк второй!");
+if (rows1 != columns2) 
+    Console.WriteLine("Невозможно найти произведение матриц, т.к. кол-во строк первой матрицы не равно кол-ву столбцов второй!");
+else if (columns1 != rows2) 
+    Console.WriteLine("Невозможно найти произведение матриц, т.к. кол-во столбцов первой матрицы не равно кол-ву строк второй!");
 else
 {
     FillArray(matrix1);
